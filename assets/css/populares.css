@@ -1,0 +1,89 @@
+.populares {
+    padding: 3rem 2rem;
+}
+
+.populares__conteudo {
+    /* vira pai de .populares__card */
+    display: flex;
+    flex-wrap: wrap;
+    /* definir que o card deve estar na área de conteúdo */
+    grid-area: conteudo;
+    padding: 1rem  0;
+}
+
+.populares__card {
+    background: #fdfdfd;
+    display: grid;
+    /* isso vira um grid -pai */
+    grid-template-areas: 
+        "card-imagem"
+        "card-corpo";
+    grid-template-columns: 100%;
+    /* aplicando tamanho pra imagem > "card-imagem" vai ter 173px e "card-corpo" vai ser automatico  */
+    grid-template-rows: 173px auto;
+    margin-right: 1rem;
+    width: calc(20% - 1rem);
+}
+
+/* removendo a margem de 1rem no final do card do skype  (o espaço que sobrou dos dois lados é de 2rem e tá lá no .populares)*/
+.populares__card:last-child {
+    margin-right: 0;
+}
+
+.populares__card--imagem {
+    grid-area: card-imagem;
+    height: 100%;
+    width: 100%
+}
+
+.populares__card--corpo {
+    /* o card também precisa ser um pai para mexer com o conteúdo */
+    display: grid;
+    grid-template-areas: 
+        "card-cabecalho"
+        "card-conteudo";
+    /* fala qual é o tamanho de cada area */
+    /* linha do cabecalho, 50px e a linha do conteudo automatica */
+    grid-template-rows: 50px auto;
+    /* isso são definições do primeiro pai em .populares__card */
+    gap: .5rem;
+    grid-area: card-corpo;
+    padding: .75rem;
+}
+
+.populares__card--titulo {
+    color: #333333;
+    font-size: 1.5rem;
+}
+
+.populares__card--data {
+    color: #808080;
+    font-size: .9rem;
+}
+
+.populares__card--descricao {
+    color: #333333;
+    line-height: 1.5rem;
+    margin: 1rem 0;
+    text-align: justify;
+}
+
+.populares__titulo {
+    font-weight: 500;
+}
+
+.populares__icone {
+    margin-right: .25;
+}
+
+.populares__cabecalho {
+    border-bottom: 1px solid #dcdcdc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.populares__botao {
+    background: transparent;
+    border: none;
+    color: #333333;
+}
